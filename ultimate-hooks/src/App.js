@@ -31,8 +31,12 @@ const useResource = (baseUrl) => {
   }, [baseUrl])
 
   const create = (resource) => {
-    // ...
-  }
+    axios
+      .post(baseUrl, resource)
+      .catch(error => {
+        console.log(error)
+      })
+    }
 
   const service = {
     create
