@@ -36,6 +36,13 @@ const useResource = (baseUrl) => {
       .catch(error => {
         console.log(error)
       })
+      axios
+        .get(baseUrl)
+        .then(response => {
+          setResources(response.data)
+        }).catch(error => {
+          console.log(error)
+        })
     }
 
   const service = {
